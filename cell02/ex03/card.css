@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+table{
+    width: 100%;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+.contact-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-button:hover {
+    background-color: #45a049;
+}

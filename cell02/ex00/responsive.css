@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  table {
+    width: 100%;
+    max-width: 1920px;
+    border-collapse: collapse;
+    height: 100vh;
+  }
+  td {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    border: 2px solid black;
+  }
+  .first-cell {
+    background-color: lightgreen;
+  }
+  .second-cell {
+    background-color: lightcoral;
+  }
+  @media (max-width: 600px) {
+    table {
+      width: 100%;
+      height: 100vh;
+    }
+    td {
+      display: block;
+      width: 100%;
+      height: 50%;
+    }
+  }

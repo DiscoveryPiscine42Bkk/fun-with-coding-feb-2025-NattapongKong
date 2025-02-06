@@ -1,0 +1,63 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+
+.parallax-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    transform-style: inherit;
+
+}
+
+.parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -999;
+    transform: translateZ(-1px) scale(1); /* Creates the parallax effect */
+}
+
+.first-section::before {
+    background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'); /* Replace with your image */
+}
+
+.second-section::before {
+    background-image: url('https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?cs=srgb&dl=pexels-pixabay-158063.jpg&fm=jpg'); /* Replace with your image */
+}
+
+.content-block {
+    height: 300px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform: translateZ(50px) scale(1); 
+}
+
+.message {
+    font-size: 2em;
+    position: relative;
+    z-index: 2;
+}

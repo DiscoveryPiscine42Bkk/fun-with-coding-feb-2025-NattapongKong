@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const tasks = localStorage.getItem('tasks');
         if (tasks) {
             ftList.innerHTML = tasks;
-            // Reattach event listeners to the loaded tasks
             Array.from(ftList.children).forEach(taskDiv => {
                 taskDiv.addEventListener('click', function() {
                     if (confirm("Do you want to delete this task?")) {

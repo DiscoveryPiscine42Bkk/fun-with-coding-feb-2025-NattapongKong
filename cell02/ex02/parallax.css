@@ -1,63 +1,52 @@
-
+/* Reset some default styles */
 body, html {
-    height: 100%;
     margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+}
+
+/* Parallax container */
+.parallax-container {
+    height: 100vh;
     perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
     transform-style: preserve-3d;
 }
 
-.parallax-section {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    transform-style: inherit;
-
-}
-
-.parallax-section::before {
-    content: '';
+/* Base layer styles */
+.layer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    right: 0;
+    bottom: 0;
     background-size: cover;
-    z-index: -999;
-    transform: translateZ(-1px) scale(1); 
+    background-position: center;
 }
 
-.first-section::before {
-    background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg');
+/* Layer 1 - Furthest back, moves slowest */
+.layer-1 {
+    transform: translateZ(-3px) scale(4);
+    background-image: url('https://cdn.magicdecor.in/com/2024/08/29110555/Drona-Mountain-Lake-House-Sunrise-Scenery-Wallpaper-Mural-710x450.jpg'); /* Replace with your image */
 }
 
-.second-section::before {
-    background-image: url('https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?cs=srgb&dl=pexels-pixabay-158063.jpg&fm=jpg'); /* Replace with your image */
+/* Layer 2 - Moves slower than Layer 3 but faster than Layer 1 */
+.layer-2 {
+    transform: translateZ(-2px) scale(3);
+    background-image: url('https://cdn.magicdecor.in/com/2024/08/29110555/Drona-Mountain-Lake-House-Sunrise-Scenery-Wallpaper-Mural-710x450.jpg'); /* Replace with your image */
 }
 
-.content-block {
-    height: 300px;
-    background-color: black;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    transform: translateZ(50px) scale(1); 
+/* Layer 3 - Moves faster than Layer 2 but slower than Layer 4 */
+.layer-3 {
+    transform: translateZ(-1px) scale(2);
+    background-image: url('https://cdn.magicdecor.in/com/2024/08/29110555/Drona-Mountain-Lake-House-Sunrise-Scenery-Wallpaper-Mural-710x450.jpg'); /* Replace with your image */
 }
 
-.message {
-    font-size: 2em;
-    position: relative;
-    z-index: 2;
+/* Layer 4 - Closest to the viewer, moves fastest */
+.layer-4 {
+    transform: translateZ(0);
+    background-image: url('https://cdn.magicdecor.in/com/2024/08/29110555/Drona-Mountain-Lake-House-Sunrise-Scenery-Wallpaper-Mural-710x450.jpg'); /* Replace with your image */
 }

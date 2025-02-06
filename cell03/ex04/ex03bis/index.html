@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <div id="ft_list"></div>
+    <button id="newTaskButton">New</button>
+
+    <style>
+      #ft_list {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      #ft_list div {
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
+
+      #ft_list div:hover {
+        background-color: #f1f1f1;
+      }
+
+      #newTaskButton {
+        margin: 20px;
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #newTaskButton:hover {
+        background-color: #5b5b5b;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="todo.js"></script>
+  </body>
+</html>

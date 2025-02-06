@@ -32,11 +32,11 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -999;
-    transform: translateZ(-1px) scale(1); /* Creates the parallax effect */
+    transform: translateZ(-1px) scale(1); 
 }
 
 .first-section::before {
-    background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg'); /* Replace with your image */
+    background-image: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg');
 }
 
 .second-section::before {

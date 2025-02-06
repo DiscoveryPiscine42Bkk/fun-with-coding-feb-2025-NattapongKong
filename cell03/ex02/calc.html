@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="leftInput" placeholder="Left operand" />
+      <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input type="text" id="rightInput" placeholder="Right operand" />
+      <input type="button" value="Try me!" onclick="calculate()" />
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+  <script>
+    function calculate() {
+      const leftInput = document.getElementById("leftInput").value;
+      const rightInput = document.getElementById("rightInput").value;
+      const operator = document.getElementById("operator").value;
+
+      if (!isPositiveInteger(leftInput) || !isPositiveInteger(rightInput)) {
+        alert("Error :(");
+        return;
+      }
+
+      const left = parseInt(leftInput, 10);
+      const right = parseInt(rightInput, 10);
+
+      if ((operator === "/" || operator === "%") && right === 0) {
+        console.log("It's over 9000!");
+        return;
+      }
+
+      let result;
+      switch (operator) {
+        case "+":
+          result = left + right;
+          break;
+        case "-":
+          result = left - right;
+          break;
+        case "*":
+          result = left * right;
+          break;
+        case "/":
+          result = left / right;
+          break;
+        case "%":
+          result = left % right;
+          break;
+        default:
+          result = "Invalid operator";
+      }
+
+      alert(`Result: ${result}`);
+      console.log(`Result: ${result}`);
+    }
+
+    function isPositiveInteger(value) {
+      return /^\d+$/.test(value) && parseInt(value, 10) >= 0;
+    }
+
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+</html>

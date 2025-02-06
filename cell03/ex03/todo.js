@@ -3,35 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const newTaskButton = document.getElementById('newTaskButton');
 
     function loadTasks() {
-        const tasks = getCookie('tasks');
+        const tasks = localStorage.getItem('tasks');
         if (tasks) {
             ftList.innerHTML = tasks;
+            // Reattach event listeners to the loaded tasks
+            Array.from(ftList.children).forEach(taskDiv => {
+                taskDiv.addEventListener('click', function() {
+                    if (confirm("Do you want to delete this task?")) {
+                        ftList.removeChild(taskDiv);
+                        saveTasks();
+                    }
+                });
+            });
         }
     }
 
     function saveTasks() {
-        const tasks = ftList.innerHTML;
-        setCookie('tasks', tasks, 7);
-    }
-
-    function setCookie(name, value, days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        console.log(document.cookie = name + "=" + value + ";" + expires + ";path=/")
-    }
-
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
+        localStorage.setItem('tasks', ftList.innerHTML);
     }
 
     newTaskButton.addEventListener('click', function() {
